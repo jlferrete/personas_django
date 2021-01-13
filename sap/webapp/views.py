@@ -8,8 +8,8 @@ from personas.models import Persona
 def bienvenido(request):
 
     no_personas_var = Persona.objects.count()
-
-    return render(request, 'bienvenido.html', {'no_personas':no_personas_var})
+    personas= Persona.objects.all()
+    return render(request, 'bienvenido.html', {'no_personas':no_personas_var, 'personas':personas})
 
 def despedirse(request):
     return HttpResponse('Despedida desde Django')
