@@ -3,7 +3,8 @@ from django.shortcuts import render
 
 # Create your views here.
 def bienvenido(request):
-    return render(request, 'bienvenido.html')
+    mensajes = {'msg1':'Valor mensaje 1', 'msg2':'Valor mensaje 2'}
+    return render(request, 'bienvenido.html', mensajes)
 
 def despedirse(request):
     return HttpResponse('Despedida desde Django')
